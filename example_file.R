@@ -6,8 +6,11 @@ require('pedigree')
 ### 此处，G是一个一行一列的矩阵，只包含一个元素，R矩阵同G。
 G <- matrix(c(va1=7.50),nrow=1,ncol=1,byrow=TRUE)
 R <- matrix(c(ve1=17.50),nrow=1,ncol=1,byrow=TRUE)
+### mu表示群体的均值
 mu <- c(250)
+### source函数，读取mmtraitsim.R文件中的R代码
 source('mmtraitsim.R')
+### 在mmtraitsim.R中定义的makebasepop函数，用来生成育种基础群体，通常也称为G0群体。
 basedata <- makebasepop(nsires=150,ndams=300,mu=mu,Va=G,Ve=R)
 cor(basedata[,-1:-6])
 var(basedata[,-1:-6])

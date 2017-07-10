@@ -1,4 +1,4 @@
-#### requires package pedigree for inbreeding calculation 用到了pedigree这个包。
+#### requires package pedigree for inbreeding calculation 用到了pedigree这个包。如果没有，需要安装这个包。在rstudio中安装包非常简单。
 require('pedigree')
 
 ### single trait simulation (quantitative trait) 单性状模拟

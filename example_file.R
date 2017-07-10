@@ -2,7 +2,8 @@
 require('pedigree')
 
 ### single trait simulation (quantitative trait) 单性状模拟
-### define (co)variance structure 定义性状的方差结构。对于单性状，直接定义加性遗传方差（G），随机残差（R）
+### define (co)variance structure 定义性状的方差结构。对于单性状，直接定义加性遗传方差（G，7.50），随机残差（R,17.50）
+### 此处，G是一个一行一列的矩阵，只包含一个元素，R矩阵同G。
 G <- matrix(c(va1=7.50),nrow=1,ncol=1,byrow=TRUE)
 R <- matrix(c(ve1=17.50),nrow=1,ncol=1,byrow=TRUE)
 mu <- c(250)

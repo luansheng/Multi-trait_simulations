@@ -1,7 +1,7 @@
-#### requires package pedigree for inbreeding calculation
+#### requires package pedigree for inbreeding calculation 用到了pedigree这个包。
 require('pedigree')
 
-### single trait simulation (quantitative trait)
+### single trait simulation (quantitative trait) 单性状模拟
 ### define (co)variance structure
 G <- matrix(c(va1=7.50),nrow=1,ncol=1,byrow=TRUE)
 R <- matrix(c(ve1=17.50),nrow=1,ncol=1,byrow=TRUE)

@@ -25,8 +25,13 @@ makebasepop <- function(nsires,ndams,mu,Va,Ve){
   ID <- 1:sum(nsires,ndams)
   nanims <- sum(nsires,ndams)
   TBV <- data.frame(round(mvrnorm(nanims,mu,Va),6))
+  #对TBV进行z-score标准化处理，标准化为平均值为0，标准差为1的向量。
   TBV <- scale(TBV)
+  
+  #开平方获得育种值的标准差
   sdtbv <- sqrt(diag(Va))
+  
+  #TBV[,s]*sdtbv[s]，进一步归一化
   for(s in 1:ncol(Va)){TBV[,s] <- round(mu[s] + (TBV[,s]*sdtbv[s]),6)}
   E <- data.frame(round(mvrnorm(nanims,rep(0,length(mu)),Ve),6))
   E <- scale(E)
